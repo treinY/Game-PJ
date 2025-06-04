@@ -1,0 +1,91 @@
+
+{% extends "base.html" %}
+
+{% block title %}Play Game - Mobile Adventure{% endblock %}
+
+{% block content %}
+<div class="game-container">
+    <div class="game-header">
+        <div class="game-stats">
+            <div class="stat">
+                <span class="stat-label">Score:</span>
+                <span id="score">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Level:</span>
+                <span id="level">1</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Lives:</span>
+                <span id="lives">❤️❤️❤️</span>
+            </div>
+        </div>
+        <button id="pauseBtn" class="pause-btn">
+            <i class="fas fa-pause"></i>
+        </button>
+    </div>
+
+    <div class="game-area">
+        <canvas id="gameCanvas" width="350" height="500"></canvas>
+        <div id="gameOverlay" class="game-overlay hidden">
+            <div class="overlay-content">
+                <h2 id="overlayTitle">Game Paused</h2>
+                <p id="overlayMessage">Tap to continue</p>
+                <div class="overlay-buttons">
+                    <button id="resumeBtn" class="btn-primary">Resume</button>
+                    <button id="restartBtn" class="btn-secondary">Restart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-controls">
+        <div class="control-section">
+            <div class="control-buttons">
+                <button id="leftBtn" class="control-btn">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <button id="rightBtn" class="control-btn">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <button id="upBtn" class="control-btn">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+                <button id="shootBtn" class="control-btn shoot-btn">
+                    <i class="fas fa-crosshairs"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="powerups-section">
+            <h3>Power-ups</h3>
+            <div class="powerup-buttons">
+                <button class="powerup-btn" data-powerup="shield">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Shield</span>
+                </button>
+                <button class="powerup-btn" data-powerup="speed">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Speed</span>
+                </button>
+                <button class="powerup-btn" data-powerup="multi">
+                    <i class="fas fa-clone"></i>
+                    <span>Multi Shot</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="startModal" class="modal">
+    <div class="modal-content">
+        <h2>Ready to Play?</h2>
+        <input type="text" id="playerName" placeholder="Enter your name" value="Player">
+        <button id="startGameBtn" class="btn-primary">Start Game</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/game.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mobile Adventure Game{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="mobile-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-item {% if request.endpoint == 'home' %}active{% endif %}">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="/game" class="nav-item {% if request.endpoint == 'game' %}active{% endif %}">
+                <i class="fas fa-gamepad"></i>
+                <span>Play</span>
+            </a>
+            <a href="/leaderboard" class="nav-item {% if request.endpoint == 'leaderboard' %}active{% endif %}">
+                <i class="fas fa-trophy"></i>
+                <span>Ranks</span>
+            </a>
+            <a href="/achievements" class="nav-item {% if request.endpoint == 'achievements' %}active{% endif %}">
+                <i class="fas fa-medal"></i>
+                <span>Rewards</span>
+            </a>
+            <a href="/profile" class="nav-item {% if request.endpoint == 'profile' %}active{% endif %}">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

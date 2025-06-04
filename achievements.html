@@ -1,0 +1,94 @@
+
+{% extends "base.html" %}
+
+{% block title %}Achievements - Mobile Adventure{% endblock %}
+
+{% block content %}
+<div class="achievements-container">
+    <div class="page-header">
+        <h1><i class="fas fa-medal"></i> Achievements</h1>
+        <div class="achievement-progress">
+            <div class="progress-circle">
+                <div class="progress-fill"></div>
+                <span class="progress-text">60%</span>
+            </div>
+            <div class="progress-info">
+                <span>3 of 5 unlocked</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="achievements-grid" id="achievementsList">
+        <div class="loading">
+            <i class="fas fa-spinner fa-spin"></i>
+            Loading achievements...
+        </div>
+    </div>
+
+    <div class="daily-challenges">
+        <h2>Daily Challenges</h2>
+        <div class="challenge-list">
+            <div class="challenge-item">
+                <div class="challenge-icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <div class="challenge-content">
+                    <h3>Coin Hunter</h3>
+                    <p>Collect 50 coins in a single game</p>
+                    <div class="challenge-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%"></div>
+                        </div>
+                        <span>40/50</span>
+                    </div>
+                </div>
+                <div class="challenge-reward">
+                    <span>+100 XP</span>
+                </div>
+            </div>
+            
+            <div class="challenge-item">
+                <div class="challenge-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="challenge-content">
+                    <h3>Speed Runner</h3>
+                    <p>Complete level 3 in under 2 minutes</p>
+                    <div class="challenge-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span>0/1</span>
+                    </div>
+                </div>
+                <div class="challenge-reward">
+                    <span>+200 XP</span>
+                </div>
+            </div>
+            
+            <div class="challenge-item completed">
+                <div class="challenge-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="challenge-content">
+                    <h3>Sharpshooter</h3>
+                    <p>Hit 10 enemies without missing</p>
+                    <div class="challenge-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <span>10/10</span>
+                    </div>
+                </div>
+                <div class="challenge-reward">
+                    <span><i class="fas fa-check"></i> Completed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/achievements.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,59 @@
+
+{% extends "base.html" %}
+
+{% block title %}Leaderboard - Mobile Adventure{% endblock %}
+
+{% block content %}
+<div class="leaderboard-container">
+    <div class="page-header">
+        <h1><i class="fas fa-trophy"></i> Leaderboard</h1>
+        <div class="filter-tabs">
+            <button class="tab-btn active" data-filter="all">All Time</button>
+            <button class="tab-btn" data-filter="week">This Week</button>
+            <button class="tab-btn" data-filter="today">Today</button>
+        </div>
+    </div>
+
+    <div class="leaderboard-list" id="leaderboardList">
+        <div class="loading">
+            <i class="fas fa-spinner fa-spin"></i>
+            Loading rankings...
+        </div>
+    </div>
+
+    <div class="your-rank">
+        <h3>Your Best</h3>
+        <div class="rank-card your-card">
+            <div class="rank-position">#42</div>
+            <div class="player-info">
+                <div class="player-name">You</div>
+                <div class="player-stats">
+                    <span class="score">5,280</span>
+                    <span class="level">Level 4</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="challenge-section">
+        <h3>Weekly Challenge</h3>
+        <div class="challenge-card">
+            <div class="challenge-icon">
+                <i class="fas fa-target"></i>
+            </div>
+            <div class="challenge-info">
+                <h4>Coin Collector</h4>
+                <p>Collect 500 coins this week</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 45%"></div>
+                </div>
+                <span class="progress-text">225/500 coins</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/leaderboard.js') }}"></script>
+{% endblock %}
