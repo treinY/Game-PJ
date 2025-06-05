@@ -1,83 +1,26 @@
-
-{% extends "base.html" %}
-
-{% block title %}Mobile Adventure Game - Home{% endblock %}
-
-{% block content %}
-<div class="home-container">
-    <div class="hero-section">
-        <div class="game-logo">
-            <i class="fas fa-rocket"></i>
-            <h1>Space Adventure</h1>
-        </div>
-        <p class="game-description">
-            Embark on an epic space journey! Collect coins, avoid obstacles, 
-            unlock achievements, and compete with players worldwide!
-        </p>
-        
-        <div class="quick-stats">
-            <div class="stat-item">
-                <i class="fas fa-users"></i>
-                <span>1.2K Players</span>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-star"></i>
-                <span>4.8 Rating</span>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-mobile-alt"></i>
-                <span>Mobile Ready</span>
-            </div>
-        </div>
-
-        <a href="/game" class="play-button">
-            <i class="fas fa-play"></i>
-            Start Playing
-        </a>
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart 12-Hour Clock (Animated)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="clock-container">
+    <canvas id="clock" width="340" height="340"></canvas>
+    <div class="score-section">
+      <span class="score-label">မိနစ်တစ်နာရီပြည့်တိုင်း:</span>
+      <span id="score">0</span>
     </div>
-
-    <div class="features-section">
-        <h2>Game Features</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fas fa-coins"></i>
-                <h3>Collect Coins</h3>
-                <p>Gather coins to unlock new ships and powerups</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-bolt"></i>
-                <h3>Power-ups</h3>
-                <p>Use special abilities to boost your performance</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-level-up-alt"></i>
-                <h3>Progressive Levels</h3>
-                <p>Challenge yourself with increasingly difficult stages</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-trophy"></i>
-                <h3>Leaderboards</h3>
-                <p>Compete with players from around the world</p>
-            </div>
-        </div>
+    <div class="extras">
+      <button id="toggle-theme">Theme</button>
+      <div id="greeting"></div>
+      <div id="progressbar-container">
+        <div id="progressbar"></div>
+      </div>
     </div>
-
-    <div class="news-section">
-        <h2>Latest Updates</h2>
-        <div class="news-item">
-            <div class="news-date">Today</div>
-            <div class="news-content">
-                <h3>New Achievement System!</h3>
-                <p>Unlock special rewards by completing challenges</p>
-            </div>
-        </div>
-        <div class="news-item">
-            <div class="news-date">2 days ago</div>
-            <div class="news-content">
-                <h3>Performance Improvements</h3>
-                <p>Smoother gameplay experience on all devices</p>
-            </div>
-        </div>
-    </div>
-</div>
-{% endblock %}
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
